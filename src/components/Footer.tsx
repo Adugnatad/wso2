@@ -7,7 +7,7 @@ export default function Footer() {
             alt="Logo"
             className="mt-1"
             height="75"
-            src="https://coopbankoromia.com.et/wp-content/uploads/2020/11/Coopbank-Logo-Ethiopia.svg"
+            src="src\assets\cooplogo.svg"
             width="75"
           />
         </div>
