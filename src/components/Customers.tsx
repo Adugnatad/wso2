@@ -1,4 +1,15 @@
+import { useEffect, useState } from "react";
+import { BASEURL } from "../config.ts";
+import axios from "axios";
+
 export default function Customer() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios.get(`${BASEURL}/api/usages?populate=*`).then((res) => {
+      setData(res.data.data);
+    });
+  }, []);
   return (
     <div className="bg-[#F2EFEB] px-[20px] lg:px-[100px] py-[70px]">
       <h2 className="text-[#141413] text-5xl font-light mb-4">
@@ -8,22 +19,28 @@ export default function Customer() {
         See what other companies have built using Mastercard's APIs
       </p> */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 ">
-        <div className=" lg:max-w-md flex flex-col bg-white p-8 rounded-2xl shadow-lg mt-10">
-          <div className="flex flex-grow flex-col justify-center items-center">
-            <img className="mb-3" src="src\assets\check.svg" alt="check" />
-            <h1 className="text-xl text-[#00ADEF] font-bold mb-3 ">
-              Open Banking aligned
-            </h1>
-            <p className="text-[19px] mb-4 ">
-              Open Banking requires financial institutions to open their data
-              for third parties to access and consume. Coop Banks’
-              API_Marketplace is the one the first in Africa to provide a
-              variety of APIs that meet the technical standards for Open
-              Banking.
-            </p>
+        {data?.map((usage: any, index: any) => (
+          <div
+            key={index}
+            className=" lg:max-w-md flex flex-col bg-white p-8 rounded-2xl shadow-lg mt-10"
+          >
+            <div className="flex flex-grow flex-col justify-center items-center">
+              <img
+                className="mb-3"
+                src={BASEURL + usage.attributes.img.data[0].attributes.url}
+                alt="check"
+              />
+              <h1 className="text-xl text-[#00ADEF] font-bold mb-3 ">
+                {usage.attributes.title}
+              </h1>
+              <p className="text-[19px] mb-4 ">
+                {usage.attributes.description}
+              </p>
+            </div>
           </div>
-        </div>
-        <div className=" lg:max-w-md flex flex-col bg-white p-8 rounded-2xl shadow-lg mt-10">
+        ))}
+
+        {/* <div className=" lg:max-w-md flex flex-col bg-white p-8 rounded-2xl shadow-lg mt-10">
           <div className="flex flex-grow flex-col justify-center items-center">
             <img className="mb-3" src="src\assets\auth.svg" alt="check" />
             <h1 className="text-xl text-[#00ADEF] font-bold mb-3 ">
@@ -92,7 +109,7 @@ export default function Customer() {
               and assisting with any problems or queries you may have.
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -1,4 +1,15 @@
+import { useState, useEffect } from "react";
+import { BASEURL } from "../config.ts";
+import axios from "axios";
+
 export default function Partners() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios.get(`${BASEURL}/api/partners?populate=*`).then((res) => {
+      setData(res.data.data);
+    });
+  }, []);
   return (
     <div id="partners" className="bg-[#f7f7f7]">
       <div className=" mx-auto py-16 px-4 sm:px-6 lg:px-8">
@@ -10,27 +21,19 @@ export default function Partners() {
             Here are some of our integration partners.
           </p>
         </div>
-        {/* <div className="flex justify-center">
-          <button className="bg-orange-600 text-white px-8 py-3 font-semibold rounded-full">
-            Contact Sales
-          </button>
-        </div> */}
-        <div className="mt-16 grid grid-cols-2 gap-4  sm:grid-cols-2 lg:grid-cols-5">
-          <div className="flex flex-row justify-center bg-white  items-center">
-            <img src="src\assets\airlines.png" alt="Airlines" />
-          </div>
-          <div className="flex flex-row justify-center bg-white  items-center px-3">
-            <img src="src\assets\telecom.png" alt="Airlines" />
-          </div>
-          <div className="flex flex-row justify-center bg-white  items-center">
-            <img src="src\assets\dstv.png" alt="Airlines" />
-          </div>
-          <div className="flex flex-row justify-center bg-white  items-center px-3">
-            <img src="src\assets\canal plus.png" alt="Airlines" />
-          </div>
-          <div className="flex flex-row justify-center bg-white  items-center">
-            <img src="src\assets\safaricom.png" alt="Airlines" />
-          </div>
+
+        <div className="mt-16 flex flex-wrap items-center justify-center overflow grid-cols-2 gap-4  sm:grid-cols-2 lg:grid-cols-5">
+          {data.map((partners: any, index: any) => (
+            <div
+              key={index}
+              className="flex flex-row justify-center bg-white min-w-[250px] h-[100px] p-3  items-center"
+            >
+              <img
+                src={BASEURL + partners.attributes.img.data[0].attributes.url}
+                alt="Airlines"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>
