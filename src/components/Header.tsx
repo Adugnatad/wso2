@@ -25,7 +25,9 @@ export default function Header() {
               src="src\assets\cooplogo.svg"
               width="75"
             />
-            <span className="text-xl font-semibold">developers</span>
+            <span className="text-xl text-[#FB6C10] font-semibold">
+              developers
+            </span>
           </div>
           <div className="space-x-4 mt-1">
             <a
