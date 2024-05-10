@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { BASEURL } from "../config.ts";
 import axios from "axios";
 
@@ -26,7 +26,8 @@ export default function Api() {
       <p className="mb-6">Find the product that is right for you</p>
       <a
         className="text-[#141413] hover:underline text-[13px]"
-        href="https://controlplane-apim-uat.coopbankoromiasc.com/devportal/apis"
+        href="https://developer.coopbankoromiasc.com/devportal/apis"
+        // href="https://apim.docs.wso2.com/en/latest/reference/product-apis/devportal-apis/devportal-v3/devportal-v3/#tag/APIs/paths/~1apis/get"
       >
         Browse all APIs →
       </a>
@@ -77,7 +78,7 @@ export default function Api() {
                   <div className="flex mt-4">
                     <a
                       className="text-[#CF4500] font-medium hover:underline mr-4"
-                      href="https://controlplane-apim-uat.coopbankoromiasc.com/devportal/apis"
+                      href="https://developer.coopbankoromiasc.com/devportal/apis"
                     >
                       Learn more
                     </a>
@@ -115,7 +116,7 @@ export default function Api() {
         <div className="flex flex-row items-center justify-center mt-6 sm:mt-0">
           <a
             className="text-[#141413] hover:text-indigo-500"
-            href="https://controlplane-apim-uat.coopbankoromiasc.com/devportal/apis"
+            href="https://developer.coopbankoromiasc.com/devportal/apis"
           >
             Browse all APIs
           </a>

@@ -22,7 +22,7 @@ export default function Header() {
               alt="Logo"
               className="mt-1"
               height="75"
-              src="src\assets\cooplogo.svg"
+              src="\cooplogo.svg"
               width="75"
             />
             <span className="text-xl text-[#FB6C10] font-semibold">
@@ -32,13 +32,13 @@ export default function Header() {
           <div className="space-x-4 mt-1">
             <a
               className="text-gray-600 hover:text-gray-800"
-              href="https://controlplane-apim-uat.coopbankoromiasc.com/devportal/apis"
+              href="https://developer.coopbankoromiasc.com/devportal/apis"
             >
               APIs
             </a>
             <a
               className="text-gray-600 hover:text-gray-800"
-              href="https://controlplane-apim-uat.coopbankoromiasc.com/devportal/applications"
+              href="https://developer.coopbankoromiasc.com/devportal/applications"
             >
               Applications
             </a>
@@ -52,7 +52,7 @@ export default function Header() {
           {/* <a className="text-gray-600">Sign up</a> */}
           <a
             className="text-gray-600 border border-gray-200s rounded-md px-4 py-1"
-            href="https://controlplane-apim-uat.coopbankoromiasc.com/devportal/services/configs"
+            href="https://developer.coopbankoromiasc.com/devportal/services/configs"
           >
             Login / Signup
           </a>
@@ -95,14 +95,14 @@ export default function Header() {
             <a
               onClick={() => setMenuOpen(false)}
               className="text-gray-600 hover:text-gray-800 font-sans text-[19px]"
-              href="https://controlplane-apim-uat.coopbankoromiasc.com/devportal/apis"
+              href="https://developer.coopbankoromiasc.com/devportal/apis"
             >
               APIs
             </a>
             <a
               onClick={() => setMenuOpen(false)}
               className="text-gray-600 hover:text-gray-800 font-sans text-[19px]"
-              href="https://controlplane-apim-uat.coopbankoromiasc.com/devportal/applications"
+              href="https://developer.coopbankoromiasc.com/devportal/applications"
             >
               Applications
             </a>
@@ -117,14 +117,14 @@ export default function Header() {
             <a
               onClick={() => setMenuOpen(false)}
               className="text-gray-600 hover:text-gray-800 font-sans text-[19px]"
-              href="https://controlplane-apim-uat.coopbankoromiasc.com/devportal/services/configs"
+              href="https://developer.coopbankoromiasc.com/devportal/services/configs"
             >
               Signup
             </a>
             <a
               onClick={() => setMenuOpen(false)}
               className="text-gray-600 hover:text-gray-800 font-sans text-[19px]"
-              href="https://controlplane-apim-uat.coopbankoromiasc.com/devportal/services/configs"
+              href="https://developer.coopbankoromiasc.com/devportal/services/configs"
             >
               Login
             </a>

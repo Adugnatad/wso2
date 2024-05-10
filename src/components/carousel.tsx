@@ -45,7 +45,7 @@ export default function Carousel() {
                   </p>
                   <div className="flex gap-4">
                     <a
-                      href="https://controlplane-apim-uat.coopbankoromiasc.com/devportal/apis"
+                      href="https://developer.coopbankoromiasc.com/devportal/apis"
                       className="bg-orange-600 px-3 py-1 rounded-[50px] text-lg text-white"
                     >
                       Learn more

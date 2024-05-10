@@ -7,7 +7,7 @@ export default function Footer() {
             alt="Logo"
             className="mt-1"
             height="75"
-            src="src\assets\cooplogo.svg"
+            src="\cooplogo.svg"
             width="75"
           />
         </div>
